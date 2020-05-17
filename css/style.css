@@ -1,17 +1,19 @@
 body{
     background-image: url("img/bck.jpg");
     margin: 0;
+    background-size: 100%;
     
 }
 .my{
     color: #a7a9be;
+    font-family: cursive;
     font-size: 5em;
     text-align: center;
     
 }
 
 .menubar{
-    text-align: center;
+    
     background-color: #0f0e17;
     width: 100%;
     
@@ -23,15 +25,16 @@ span{
     width: 100%;
     float: right;
     background-color: #0f0e17;
-
+    text-align: center;
 }
 .icons i{
     color: #a7a9be;
     text-align: center;
-    margin: .1em;
-    font-size: 2.5em;
+    margin: .5em;
+    font-size: 2em;
     
 }
+
 @media screen and (max-width:1080px){
     .my{
         width: 100%;
@@ -47,6 +50,7 @@ span{
     .icons i {
         line-height: .5em;
         padding: .5em;
+
     }
     
 }
