@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Dhruv's Page
+        </title>
+        <style>
+            .body{
+                background-color:aquamarine;
+                border-radius: 30px;
+                width: auto;
+                
+            }
+            .name{
+                background-color:royalblue;
+                width: auto;
+                border-radius: 20px;
+                
+            }
+            .year{
+                margin-top: 10px;
+                font-size: 40px;
+                background-color: violet;
+                color:black;
+                border-radius: 0px;
+                margin-bottom: 10px;
+                border-radius: 50px;
+                width: 320;
+            }
+            .month{
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: wheat;
+                width: 320;
+                border-radius: 15px 15px 0px 0px;
+            }
+            .days{
+                background-color: tomato;
+                border-radius: 0px 0px;
+                width: 320;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            .num{
+                border-radius: 0px 0px 15px 15px;
+                background-color:whitesmoke;
+                width: 320;
+                margin-top: 0px;
+                padding-bottom: 5px;
+                
+            }
+            span{
+                margin-top: 10px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div class="body" ><font class="name" size=auto>&#128526 Dhruv's Calendar &#128526</font>
+        <script>
+            function leapchk(year){
+                if ((year % 4) == 0){
+                    if ((year % 100) == 0){
+                        if ((year % 400) == 0){
+                            lp = true;
+                        }
+                        else{
+                            lp = false;
+                        }
+                    }
+                    else{
+                        lp = true;
+                    }
+                }
+                else{
+                    lp = false;
+                }
+            return lp;
+            }
+            var month = 1;
+            var year = prompt("Enter a year between 2020 , 5000","2020");
+            if (parseInt(year)>=2020){
+            document.write("<h1 class='year'>"+year+"</h1>")
+            while(month<=12){
+                var day_start = 2;
+                for(i=2020;i<year;i++){
+                    if (leapchk(i)){
+                        day_start+=366
+                    }
+                    else{
+                        day_start+=365
+                    }
+                }
+                day_start%=7;
+                
+                var m = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                document.write("<h1 class='month'>&#128516 "+m[month-1]+"&#128516</h1>")
+                if (leapchk(year)){
+                    var days = new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31) ;
+
+                }
+                else{
+                    var days = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+
+                }
+                for(i=0;i<parseInt(month)-1;i++){
+                    day_start+=days[i]
+                    
+                }
+                day_start%=7;
+                var day = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+                document.write("<h1 class='days'>"+day.slice(0,7).join(" ")+"</h1><h2 class='num'>");
+                for(j=1;j<=days[parseInt(month)-1];j++){
+                    if (j==1){
+                        document.write("&nbsp".repeat((day_start*7))+"&nbsp".repeat(3)+"<span>"+j+"</span>"+"&nbsp".repeat(2));
+                    }
+                    else{
+                        if (j<=9){
+                            document.write("&nbsp".repeat(3)+"<span>"+j+"</span>"+"&nbsp".repeat(2));
+                        }
+                        else{
+                            document.write("&nbsp".repeat(2)+"<span>"+j+"</span>"+"&nbsp".repeat(1));
+                        }
+                    }
+                    if ((day_start+j)%7==0){
+                        document.write("<br>");
+                    }
+                }
+                document.write("&nbsp".repeat(7-((day_start+days[month-1])%7)).repeat(7)+"</h2>");
+            month+=1;
+            }}
+            else{
+                alert("This calender does not works for that input Yet")
+            }
+        </script>
+        2nd Feb 2020
+    </body><center>
+</html>

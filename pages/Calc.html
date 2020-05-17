@@ -1,0 +1,277 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<style>
+	.heading{
+		background-color:skyblue;
+		width: 450px;
+		border-radius: 25px;
+		margin-bottom: 2px;
+		/*position: fixed;
+		top:70px;
+		height: 90px;
+*/
+	}
+	.moons{
+		background-color: lemonchiffon;
+		width: 190px;
+		height: 30px;
+		border-radius: 7px;
+		padding-top: 4px;
+	}
+	.version{
+		background-color: lightcyan;
+		border-radius: 12px;
+		width: 85px;
+        height: 18px;
+        padding: 4px;
+		margin-top: 10px;
+		margin-bottom: 15px;
+	}
+	.readonly{
+		background-color: mistyrose,rgba(red, green, blue, 0.8);
+		border-radius: 12px;
+		width: 150px;
+        margin-bottom: 0px;	
+	}
+	.txtbar{
+        margin-top: 5px;
+		border-radius: 12px 60px 2px 2px ;
+		margin-bottom: 0px;
+		width: 211px;
+        height: 30px;
+        font-size: 20px;
+        border: 0px;
+        padding-left: 10px;
+        padding-right: 20px;
+	}
+	.buttons{
+		width: 180px;
+        border-top: 0px;
+		border-radius: 0px 0px 12px 60px;
+		padding: 15px;
+		font-size: 30px;
+		padding-top: 2px;
+        background-color: orange;
+	}
+	.buttons input{
+		transition: all 0.5s;
+		background-color: wheat;
+		border-radius: 10px;
+		margin: 5px 5px 2px 4px;
+        font-size: 20px;
+    }
+	input:hover{
+		background-color:cadetblue;
+		color: wheat;
+	}
+	#equals{
+		font-size: 30;
+        border-radius: 2px 12px;
+        color: black;
+        width:40px;
+	}
+	.about{
+		background-color: paleturquoise;
+		width: 150px;
+		border-radius: 7px;
+	}
+	.details input{
+		border-radius: 5px;
+		background-color: rgb(228, 224, 207);
+	}
+	footer{
+		background-color: whitesmoke;
+		width: 180px;
+		margin-top: 20px;
+		border-radius: 5px;
+		padding-bottom: 10px;
+		font-family: cursive;
+		color: black;
+	}
+	#clear{
+		margin-bottom: 10px;
+	}
+	.body{
+        background-color:thistle;
+		padding-top: 18px;
+		padding-bottom: 18px;
+		border-radius: 20px;
+		width: 460px;
+		align-self: center;
+        align-items: center;
+		align-self: auto;
+		margin: auto;
+	}
+	span{
+		border: 1px solid;
+		border-radius: 5px;
+	}
+	.toggle input{
+		margin-top: 2px;
+		font-size: 12px;
+		border-radius: 10px;
+        color: black;
+        padding-right: 2px;
+	}
+	.toggle{
+		margin-top: 0px;
+		padding-bottom: 4px;
+        padding-top: 0px;
+        border-radius:0px 0px 15px 15px;
+        width: 150px;
+	}
+	.operators input{
+		background-color: aquamarine;
+		width: auto;
+        font-size: 10px;
+	}
+	.operators input:active{
+		background-color: red;
+	}
+	.ver{
+		font-size: 15px;
+	}
+	.instr{
+		font-size: 9px;
+	}
+	#clear{
+		font-size: 10px;
+	}
+	.num input{
+        border-radius:10px;
+        width: 30px;
+    }
+    .num{
+        margin-top: 0px;
+    }
+    .sci input{
+        font-size: 9px;
+    }
+	#back{
+		margin-left: 5px;
+		margin-top: 7px;
+		float: left;
+		
+	}
+	</style>
+</head>
+<body>
+	<center class="body">
+		
+
+<script>
+	A="";
+	function calc(num){
+		A+=num;
+		document.forms[0].txt.value = A;
+	}
+	function ans(){
+		document.forms[0].txt.value = A +"="+eval(A);
+		A="";
+	}
+	dhruv = {name:"Dhruv Dutta",age:"18",skills:"Python\nJavaScript\nHtml\nMySQL\nCSS",ini:initials};
+	function initials(){
+	 return "D D";
+	}
+	var moon=["&#127762"]
+	for(i=127763;i<=127768;i++){
+		moon.push("&#"+i);
+	}
+	var string2= moon.join("");
+	document.write("<div class='moons'>"+string2+"</div>")
+	function scicalc(){
+		document.getElementById("operators").innerHTML ="<div class='instr' >(first enter the number then click the operation)</div><input class ='sci' type='button' value='&#8730' onclick='scalc(\"sqrt\")'><input class ='sci' type='button' value='Sin()' onclick='scalc(\"sin\")'><input class ='sci' type='button' value='Cos()' onclick='scalc(\"cos\")'><input class ='sci' type='button' value='Tan()' onclick='scalc(\"tan\")'>";
+		A="";
+		document.forms[0].txt.value ="";
+	}
+	function simcalc(){
+		document.getElementById("operators").innerHTML= "";
+		A="";
+		document.forms[0].txt.value = "";
+	}
+	var Op ;
+	function scalc(Op){
+		switch(Op){
+			case 'sqrt':
+				document.forms[0].txt.value = "sqrt of "+A+"="+Math.sqrt(A);
+				A="";
+				break;
+				case 'sin':
+				document.forms[0].txt.value = "sin("+A+") = "+Math.sin(A);
+				A="";
+				break;
+				case 'cos':
+				document.forms[0].txt.value = "cos("+A+") = "+Math.cos(A);
+				A="";
+				break;
+				case 'tan':
+				document.forms[0].txt.value = "tan("+A+") = "+Math.tan(A);
+				A="";
+				break;	
+		}
+	}
+</script>
+<form>
+	
+    <div class="heading">
+	    <h1>&#128516 Dhruv's Calculator &#128516</h1>
+    </div>
+    <h5 class="version">version :<span class="ver">2.1</span>
+    </h5>
+    <font size=2>
+        <div class="readonly">(the textbar is readonly)</div>
+    </font>
+    <input class="txtbar" type="text" name ="txt" value="" readonly><br>
+    <div class="buttons">
+        <div class="toggle"><input type="button" value="Simple" onclick="simcalc()">
+            <input type="button" value="Scientific" onclick="scicalc()">
+        </div>
+        <input type="button" value="Backspace" id="clear" onclick="A=A.slice(0,-1);document.forms[0].txt.value=A;"><br>
+        <div class="num">
+            <input type="button" value="1" onClick="calc('1')">
+            <input type="button" value="2" onClick="calc('2')">
+			<input type="button" value="3" onclick="calc('3')">            
+			<input type="button" class="operators" value="+" onclick="calc('+')">
+            <br>
+            <input type="button" value="4" onclick="calc('4')">
+            <input type="button" value="5" onclick="calc('5')">
+			<input type="button" value="6" onclick="calc('6')">            
+			<input type="button" class="operators" value="-" onclick="calc('-')">
+            <br>
+            <input type="button" value="7" onclick="calc('7')">
+            <input type="button" value="8" onclick="calc('8')">
+			<input type="button" value="9" onclick="calc('9')">            
+			<input type="button" class="operators" value="*" onclick="calc('*')">
+            <br>
+            <input type="button" value="(" onclick="calc('(')">
+            <input type="button" value="0" onclick="calc('0')">
+			<input type="button" value=")" onclick="calc(')')">            
+			<input type="button" class="operators" value="/" onclick="calc('/')">
+        </div>
+        <div class="operators" id="operators">
+        </div>
+        <input type="button"  id ="equals" value="=" onclick="ans()">
+        </div>
+</form>
+<section>
+<h1 class="about">About Me</h1>
+<div class="details">
+    <input type ="button" value="Name" onclick="alert(dhruv.name);">
+    <input type ="button" value="Age" onclick="alert(dhruv.age);">
+    <input type ="button" value="Skills" onclick="alert(dhruv.skills);">
+</div>
+</section>
+<footer class="footer">
+	versions:<br>
+	<span>2.1 -> 2nd Feb 2020 </span>(Eval added)<br><br>
+	<span>2.0 -> 1st Feb 2020 </span><br>(scientific + multiop)<br><br>
+	<span>1.3 -> 31st Jan 2020 </span><br>(CSS)<br><br>
+	<span>1.2 -> 13th Jan 2020 </span>(textbar)<br><br>
+	<span>1.1 -> 28th Dec 2019 </span>(release)<br><br>
+<h3>Contact Me:</h3>
++91 99883-30621
+</footer>
+</center>
+</body>
