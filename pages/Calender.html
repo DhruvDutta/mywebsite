@@ -33,7 +33,7 @@
                 background-color: wheat;
                 width: 320;
                 border-radius: 15px 15px 0px 0px;
-                font-size:1.5em;
+                font-size:1em;
             }
             .days{
                 background-color: tomato;
@@ -95,7 +95,7 @@
                 }
                 day_start%=7;
                 
-                var m = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                var m = ["January_", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
                 document.write("<h1 class='month'>&#128516 "+m[month-1]+"&#128516</h1>")
                 if (leapchk(year)){
                     var days = new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31) ;
