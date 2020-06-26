@@ -1,12 +1,12 @@
 body{
-    background-image: url("img/back.jpg");
     margin: 0;
-    background-size: 70%;
-    
+    background: url('./img/bck1.jpg');
+    background-attachment: fixed;    
 }
+
 .my{
     color: #a7a9be;
-    
+    font-family: cursive;
     font-size: 5em;
     text-align: center;
     
